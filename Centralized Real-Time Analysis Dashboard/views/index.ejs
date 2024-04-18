@@ -1,0 +1,30 @@
+<!-- Navbar de navegacion -->
+<%- include _navbar.ejs %>
+
+<div class="wrapper">
+  <div class="col-sm-6 col-md-4 col-md-offset-4 box">
+    <div>
+      <div class="box-head bb-orange">
+        USER LOGIN
+      </div>
+      <div class="box-body">
+        <form class="form-signin" action="/login" method="POST">    
+          <div class="container-1">
+            <span class="icon"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" name="username" value="admin" placeholder="Username"/>
+          </div>
+          <div class="container-1">
+            <span class="icon"><i class="fa fa-lock"></i></span>
+            <input type="password" class="form-control" name="password" value="admin" placeholder="Password"/>      
+          </div>
+          <% if (error != '') { %>
+          <div class="container-1 alert alert-danger">
+            <strong>Error:</strong> <%= error %>
+          </div>
+          <% } %>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
